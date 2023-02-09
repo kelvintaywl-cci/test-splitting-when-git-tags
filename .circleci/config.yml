@@ -48,6 +48,11 @@ jobs:
             cat "${CIRCLE_INTERNAL_TASK_DATA}/circle-test-results/results.json" | jq "."
 
 workflows:
-  main:
+  on-tag:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
