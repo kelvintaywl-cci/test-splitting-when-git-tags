@@ -1,4 +1,4 @@
-# Jest Playwright JavaScript example
+# Exploring Test-Splitting with Git tags
 
 This includes a CI configuration with CircleCI, and uses test splitting.
 
