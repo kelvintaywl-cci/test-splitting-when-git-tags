@@ -15,7 +15,9 @@ jobs:
       - run:
           name: Check out previous test metadata
           command: |
-            cat "${CIRCLE_INTERNAL_TASK_DATA}/circle-test-results/results.json" | jq .
+            if [ -f "${CIRCLE_INTERNAL_TASK_DATA}/circle-test-results/results.json" ]; then
+              cat "${CIRCLE_INTERNAL_TASK_DATA}/circle-test-results/results.json" | jq .
+            fi
       - checkout
       - attach_workspace:
           at: /mnt/ramdisk/
